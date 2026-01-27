@@ -1,4 +1,11 @@
-<!--HTML and CSS Basics-->
+<!--HTML Basics
+    HTML tags 
+    Text emphasis
+    HTML lists
+    HTML images
+    HTML links
+    Internal links-->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +17,7 @@
                 color: rgb(147, 234, 42);
             }
             body {
-                background-color: rgb(74, 101, 189);
+                background-color: rgb(32, 164, 169);
             }
 
             #Bota {
@@ -18,22 +25,42 @@
             }
             .Yep {
                 background-color:rgb(77, 155, 197);
+                font-family:monospace;
+                font-size: larger;
+                text-align: center;
             }
             #Nope {
                 background-color: rgb(213, 107, 187);
+                font-size :1.5em;
+              
+            }
+            .Omer {
+                color: rgb(98, 9, 74);
+            }
+            .fact{
+                border-top: 1px solid rgb(109, 33, 33);
+                border-bottom: 1px solid rgb(97, 13, 13);
+                padding-top: 6px;
+                padding-bottom: 6px;
+                
+            }
+            .warning{
+                border: 5px solid rgb(208, 232, 56);
+                background-color: rgb(67, 118, 220);
+                color: white;
             }
         </style>
 
     </head>
     <body>
         <h1>Personal Portfolio</h1>
-        <p>There is you can write anything for example information, idea etc.</p>
+        <p class="fact warning">There is you can write anything for example information, idea etc.</p>
         <h6>Tags used to create headlines on a page</h6>
-        <h2>My fav piece of song</h2>
-        <p>I learned that silence can be strong,<br>
-            Not every fight is loud or long.<br>
-            Some battles happen deep inside,<br>
-            Where fears and hopes collide.</p>
+        <h2><a href="#kiralik ask">My fav piece of song</a></h2>
+        <p> Yaşamak dört nala şimdi<br>
+            Korkudan kapanmış gözlerimle<br>
+            Yaban çiçekleri gibi<br>
+            Rüzgarla savruldum bu şehirde</p>
         <p id="Bota"><a href="https://i.pinimg.com/736x/0b/90/20/0b9020d47e17fd68a59bc2b9a34d69bd.jpg">Actually my vibe</a></p>
         <p>Telling the truth <storng>is not always easy</storng> but it is the <strong><em>right thing to do</em></strong>
             <em>builds trust and helps people understand each other.</em> 
@@ -53,6 +80,29 @@
         </ol>
         <h3>I want to travel to</h3>
         <img src="https://i.pinimg.com/1200x/f9/4c/58/f94c5898fcc5227a6b969b303bf8a1b6.jpg" alt="Rest" width="450" , height="550">
+
+        <h2 id="kiralik ask">Link for my fav music</h2>
+        <h3 class="Omer">Click the photo</h3>
+        <a href="https://www.youtube.com/watch?v=i0YgVmAalZ4&list=RDVUPweW3iAr4&index=2&pp=8AUB"><img src="https://i.pinimg.com/736x/80/b4/8d/80b48d8f087ee8bcb37eb566469fd367.jpg" alt="Defne" width="250" , height="350"></a>
+        
+
+        <h3>IDK</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Places</th>
+                    <th>Job</th>
+                    <th>Music</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Kz</td>
+                    <td>Data</td>
+                    <td>musics</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
 

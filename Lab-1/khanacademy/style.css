@@ -1,0 +1,46 @@
+/* CSS Basics
+   Selecting by tag name
+   Selecting by id 
+   Selecting by class
+*/
+
+
+/* <style>
+            p {
+                color: rgb(147, 234, 42);
+            }
+            body {
+                background-color: rgb(32, 164, 169);
+            }
+
+            #Bota {
+                background-color:rgb(77, 156, 210);
+            }
+            .Yep {
+                background-color:rgb(77, 155, 197);
+                font-family:monospace;
+                font-size: larger;
+                text-align: center;
+            }
+            #Nope {
+                background-color: rgb(213, 107, 187);
+                font-size :1.5em;
+              
+            }
+            .Omer {
+                color: rgb(98, 9, 74);
+            }
+            .fact{
+                border-top: 1px solid rgb(109, 33, 33);
+                border-bottom: 1px solid rgb(97, 13, 13);
+                padding-top: 6px;
+                padding-bottom: 6px;
+                
+            }
+            .warning{
+                border: 5px solid rgb(208, 232, 56);
+                background-color: rgb(67, 118, 220);
+                color: white;
+            }
+        </style>
+*/
