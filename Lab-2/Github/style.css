@@ -1,0 +1,370 @@
+body{
+  font-family: system-ui;
+}
+
+
+.Git{
+    width:40px;
+    height: auto;       
+    display: block;
+    margin-left: 20px; 
+    margin-right: auto;
+}
+
+.nav-menu {
+    display: flex;        
+    gap: 30px;             
+    align-items: center;     
+    font-size: 16px;
+    margin-left: 70px;
+    margin-top: -30px;
+    color: #514e4e; 
+  }
+  
+  .nav-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s, color 0.2s; 
+  }
+  
+  .nav-item:hover {
+    transform: translateY(2px);
+               
+  }
+
+  .arrow {
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.2s; 
+    transform: translateY(3px);
+  }
+  
+  .nav-item:hover .arrow {
+    transform: translateY(-2px); 
+  }
+  
+  .search-input {
+    position: absolute;       
+    top: 23px;                
+    right: 190px;         
+    width: 20%;     
+    padding: 5px 12px;
+    border: 1px solid #bdb7b7;  
+    border-radius: 6px;    
+    background-color: transparent; 
+    color: #222121;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      
+}
+
+.search-input::placeholder {
+    color: #585656;
+}
+
+.small-line {
+  width: 1px;           
+    height: 20px;        
+    background-color: #9d9a9a; 
+    margin: 0 5px;   
+    margin-left: 1333px;
+    margin-top:-11px;
+}
+
+
+.dashboard-input {
+  position: absolute;      
+  top: 23px;
+  width: 9%;  
+  right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #bdb7b7;   
+  border-radius: 6px;       
+  background-color: transparent; 
+  color: #222121;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+           
+}
+
+.dashboard-input::placeholder {
+  color: #3d3c3c;            
+}
+
+.center-text {
+  text-align: center;     
+  color: #1c1b1b;             
+  font-size: 59px;         
+  margin-top: 90px;       
+  font-weight: bold; 
+}
+
+.sub-text {
+  text-align: center;   
+  color: #514e4e;       
+  font-size: 17px;      
+  margin-top: 29px;     
+}
+
+
+.center-button {
+  display: block;
+  margin: 30px auto;                
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 590;
+  color: #fff;
+  background: linear-gradient(
+      to bottom,
+      #454545,  
+      #000000    
+  );
+  border: 1px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.center-button:hover {
+  box-shadow: 
+      0 0 8px rgba(255, 255, 255, 0.6),
+      0 0 16px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(
+      to bottom,
+      #555,
+      #111
+  );
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.pricing-section {
+  background: #f6f8fa; 
+  padding: 60px 40px;
+}
+
+.pricing-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: #fff;
+  width: 320px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.enterprise {
+  border: 3px solid #1f6feb;
+}
+
+.recommended {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f6feb;
+  color: white;
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.desc {
+  text-align: center;
+  font-size: 13px;
+  color: #57606a;
+}
+
+.price {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.dollar {
+  font-size: 20px;
+  vertical-align: top;
+}
+
+.usd {
+  font-size: 14px;
+}
+
+.per {
+  display: block;
+  font-size: 12px;
+  color: #57606a;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 16px;
+}
+
+.btn.dark {
+  background: linear-gradient(#30363d, #0d1117);
+  color: white;
+  border: none;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #d0d7de;
+}
+
+
+.btn:hover {
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 20px rgba(255,255,255,0.4);
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 14px;
+  padding: 6px 0;
+  border-top: 1px solid #d0d7de;
+}
+
+
+.addons {
+    padding: 60px 40px;
+    background: #f6f8fa;
+}
+
+.addons h2 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.addons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.addon-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.addon-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.purple { background: #f3e8ff; color: #7c3aed; }
+.green  { background: #dcfce7; color: #15803d; }
+.blue   { background: #e0f2fe; color: #0369a1; }
+.pink   { background: #fce7f3; color: #be185d; }
+.orange { background: #ffedd5; color: #c2410c; }
+.yellow { background: #fef9c3; color: #a16207; }
+
+.addon-card h3 {
+    margin: 8px 0;
+}
+
+.addon-card p {
+    color: #57606a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.addon-card a {
+    display: inline-block;
+    margin-top: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000000;
+}
+
+.addon-card a:hover {
+    text-decoration: underline;
+}
+
+.badge2 {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid #1a7f37;
+    color: #1a7f37;
+}
+
+.compare-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.compare-link {
+  color: #0969da;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-flex;
+  flex-direction: column;   
+  align-items: center;
+  gap: 6px;
+}
+
+.arrow {
+  font-size: 22px;
+  transition: transform 0.25s ease;
+}
+
+
+.compare-link:hover .arrow {
+  transform: translateY(4px);
+}
+
