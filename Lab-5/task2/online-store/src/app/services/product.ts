@@ -10,7 +10,8 @@ export class ProductService {
     { id: 2, name: 'Laptops' },
     { id: 3, name: 'Headphones' },
     { id: 4, name: 'Tablets' },
-    { id: 5, name: 'Cosmetics'}
+    { id: 5, name: 'Cosmetics'},
+    {id:6, name:'Microphones'}
   ];
 
   products: Product[] = [
@@ -43,6 +44,7 @@ export class ProductService {
     { id:23,name:'Matte Ink Lipstick',description:'Long lasting lipstick',price:6000,rating:4.6,image:'assets/images/ee.jpg',link:'https://l.kaspi.kz/shop/EBdoraRgTMEwdq6',likes:0,categoryId:5},
     { id:24,name:'Nude Beauty Palette',description:'Eyeshadow palette',price:15000,rating:4.9,image:'assets/images/nude.jpg',link:'https://l.kaspi.kz/shop/3idPpkwGyP1hASV',likes:0,categoryId:5},
     { id:25,name:'Rare Beauty Blush',description:'Liquid blush',price:12000,rating:4.8,image:'assets/images/rera.jpg',link:'https://l.kaspi.kz/shop/Gtxq1qpwyJ3purL',likes:0,categoryId:5},
+   { id:26,name:'Rare Beauty Blush',description:'Liquid blush',price:12000,rating:4.8,image:'assets/images/rera.jpg',link:'https://l.kaspi.kz/shop/Gtxq1qpwyJ3purL',likes:0,categoryId:6},
   ];
 
   getCategories(){ return this.categories; }

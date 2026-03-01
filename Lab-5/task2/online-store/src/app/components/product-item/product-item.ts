@@ -16,7 +16,7 @@ export class ProductItemComponent {
   }
 
   remove() {
-    // confirmation dialog қосылды
+
     if (confirm("Are you sure you want to delete this product?")) {
       this.delete.emit(this.product().id);
     }

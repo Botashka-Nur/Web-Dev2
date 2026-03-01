@@ -1,0 +1,41 @@
+.home-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .home-container h1 {
+    font-size: 48px;
+    color: #1e293b;
+    margin-bottom: 15px;
+  }
+  
+  .home-container p {
+    font-size: 20px;
+    color: #475569;
+    margin-bottom: 30px;
+  }
+  
+  .home-container img {
+    width: 250px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+  }
+  
+  .btn {
+    padding: 14px 28px;
+    background-color: #38bdf8;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #0284c7;
+    transform: translateY(-2px);
+  }

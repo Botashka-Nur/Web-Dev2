@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>Albums</h2>
+
+  <div *ngIf="loading">Loading albums...</div>
+
+  <div class="album-card" *ngFor="let album of albums">
+    <div (click)="null" [routerLink]="['/albums', album.id]" class="album-info">
+      <strong>#{{album.id}}</strong> — {{album.title}}
+    </div>
+    <button (click)="deleteAlbum(album.id)">Delete</button>
+  </div>
+</div>
