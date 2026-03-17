@@ -1,8 +1,8 @@
+// components/album-photos/album-photos.ts
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { AlbumService } from '../../services/album';
-import { Photo } from '../../modules/photo.model';
+import { AlbumService, Photo } from '../../services/album';
 
 @Component({
   selector: 'app-album-photos',
@@ -15,6 +15,7 @@ export class AlbumPhotosComponent implements OnInit {
 
   photos: Photo[] = [];
   loading = true;
+  error: string = '';
   albumId!: number;
 
   constructor(
@@ -24,15 +25,25 @@ export class AlbumPhotosComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // :id параметрін URL-дан алу
     this.albumId = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.albumService.getAlbumPhotos(this.albumId).subscribe(data => {
-      this.photos = data;
-      this.loading = false;
+    // Альбом фотоларын алу
+    this.albumService.getAlbumPhotos(this.albumId).subscribe({
+      next: (data: Photo[]) => {
+        this.photos = data;
+        this.loading = false;
+      },
+      error: (err: any) => {
+        console.error(err);
+        this.error = 'Failed to load photos';
+        this.loading = false;
+      }
     });
   }
 
   goBack() {
+    // Артқа /albums/:id бетіне қайту
     this.router.navigate(['/albums', this.albumId]);
   }
 }

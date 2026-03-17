@@ -3,11 +3,12 @@ import { AlbumService } from '../../services/album';
 import { Album } from '../../modules/album.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-albums',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './albums.html',
   styleUrls: ['./albums.css'],
 })

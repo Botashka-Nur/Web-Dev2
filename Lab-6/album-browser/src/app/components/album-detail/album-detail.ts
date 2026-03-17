@@ -1,86 +1,76 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumService } from '../../services/album';
-import { Album } from '../../modules/album.model';
+
+
+export interface Album {
+  userId: number;
+  id: number;
+  title: string;
+}
 
 @Component({
   selector: 'app-album-detail',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './album-detail.html',
-  styleUrls: ['./album-detail.css']
+  styleUrls: ['./album-detail.css'],
+  standalone: true, 
+  imports: [CommonModule, FormsModule] 
 })
 export class AlbumDetailComponent implements OnInit {
-
-  album!: Album;
-  loading = true;
-  error: string | null = null;
+  albumId!: number;
+  album!: Album; 
+  newTitle: string = '';
+  loading = false;
   saving = false;
-  successMessage = false;
+  error: string = '';
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private albumService: AlbumService
-  ) {}
+  constructor(private route: ActivatedRoute, private albumService: AlbumService, private router: Router) {}
 
-  ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-
-    if (!id) {
-      this.error = 'Invalid album ID';
-      this.loading = false;
-      return;
-    }
-
-    this.loadAlbum(id);
+  ngOnInit() {
+    this.albumId = +this.route.snapshot.paramMap.get('id')!;
+    this.fetchAlbum();
   }
 
-  loadAlbum(id: number): void {
-    this.albumService.getAlbum(id).subscribe({
-      next: (data) => {
+  fetchAlbum() {
+    this.loading = true;
+    this.albumService.getAlbum(this.albumId).subscribe({
+      next: (data: Album) => {
         this.album = data;
+        this.newTitle = data.title;
         this.loading = false;
       },
-      error: () => {
-        this.error = 'Failed to load album.';
+      error: (err: any) => {
+        console.error(err);
+        this.error = 'Album could not be loaded';
         this.loading = false;
       }
     });
   }
 
-  save(): void {
-    if (!this.album.title.trim()) {
-      this.error = 'Title cannot be empty';
-      return;
-    }
-
+  save() {
     this.saving = true;
-    this.error = null;
-
-    this.albumService.updateAlbum(this.album).subscribe({
-      next: () => {
+    const updatedAlbum: Album = { ...this.album, title: this.newTitle };
+    this.albumService.updateAlbum(updatedAlbum).subscribe({
+      next: (data: Album) => {
+        this.album = data;
         this.saving = false;
-        this.successMessage = true;
-
-        setTimeout(() => {
-          this.successMessage = false;
-        }, 2000);
+        alert('Saved!');
       },
-      error: () => {
-        this.error = 'Failed to update album';
+      error: (err: any) => {
+        console.error(err);
         this.saving = false;
+        alert('Error saving album');
       }
     });
   }
 
-  goToPhotos(): void {
-    this.router.navigate(['/albums', this.album.id, 'photos']);
+  goBack() {
+    this.router.navigate(['/albums']);
   }
 
-  goBack(): void {
-    this.router.navigate(['/albums']);
+  viewPhotos() {
+    this.router.navigate(['/albums', this.albumId, 'photos']);
   }
 }
