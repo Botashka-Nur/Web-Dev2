@@ -1,22 +1,22 @@
 class Animal:
-    def __init__(self, name, age, species):
+    def __init__(self, name, age, kind):
         self.name = name
         self.age = age
-        self.species = species
+        self.kind = kind
 
     def speak(self):
         return "Some sound"
 
     def info(self):
-        return f"{self.name} is a {self.age}-year-old {self.species}"
+        return f"{self.name} is a {self.age}-year-old {self.kind}"
 
     def __str__(self):
-        return f"Animal({self.name}, {self.age}, {self.species})"
+        return f"Animal({self.name}, {self.age}, {self.kind})"
 
 
 class Dog(Animal):
     def __init__(self, name, age, breed):
-        super().__init__(name, age, species="Dog")
+        super().__init__(name, age, kind="Dog")
         self.breed = breed
 
     def speak(self):
@@ -31,7 +31,7 @@ class Dog(Animal):
 
 class Cat(Animal):
     def __init__(self, name, age, color):
-        super().__init__(name, age, species="Cat")
+        super().__init__(name, age, kind="Cat")
         self.color = color
 
     def speak(self):
