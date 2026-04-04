@@ -1,0 +1,46 @@
+# api/views/generics.py
+from rest_framework import generics, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from api.models import Product, Category
+from api.serializers import ProductSerializer, CategorySerializer
+
+# ------------------------
+# Products
+# ------------------------
+class ProductListAPIView(generics.ListCreateAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    lookup_url_kwarg = 'product_id'
+
+class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    lookup_url_kwarg = 'product_id'
+
+# ------------------------
+# Categories
+# ------------------------
+class CategoryListAPIView(generics.ListCreateAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    lookup_url_kwarg = 'category_id'
+
+class CategoryDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    lookup_url_kwarg = 'category_id'
+
+# ------------------------
+# Products by Category
+# ------------------------
+class CategoryProductsAPIView(APIView):
+    def get(self, request, category_id):
+        try:
+            category = Category.objects.get(id=category_id)
+        except Category.DoesNotExist:
+            return Response({'error': 'Category not found'}, status=status.HTTP_404_NOT_FOUND)
+
+        products = Product.objects.filter(category=category)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
